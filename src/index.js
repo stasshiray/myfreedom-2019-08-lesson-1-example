@@ -10,18 +10,7 @@ const title2 = <Title />;
 const kinds = {
     'info': 'gray',
     'danger': 'red'
-};
-
-const Button = ({ text, kind, ...buttonProps }) => (
-  <button className={"btn btn-" + kind} {...buttonProps}>
-    {text}
-  </button>
-);
-
-const divTitle = (
-  <div>
-    <Button kind="danger" text="click me" />
-    <Button kind="info" disabled={true} text="do not click" />
+};   <Button kind="info" disabled={true} text="do not click" />
   </div>
 );
 
