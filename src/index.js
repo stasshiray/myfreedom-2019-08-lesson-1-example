@@ -1,12 +1,36 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from "react";
+import ReactDOM from "react-dom";
+import './App.css';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const Title = () => <h1>Title</h1>;
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+const title = <Title />;
+const title2 = <Title />;
+
+const kinds = {
+    'info': 'gray',
+    'danger': 'red'
+};
+
+const Button = ({ text, kind, ...buttonProps }) => (
+  <button className={"btn btn-" + kind} {...buttonProps}>
+    {text}
+  </button>
+);
+
+const divTitle = (
+  <div>
+    <Button kind="danger" text="click me" />
+    <Button kind="info" disabled={true} text="do not click" />
+  </div>
+);
+
+/* React.createElement('div', {}, [
+    React.createElement('h1', {}, 'Hello, world'),
+    React.createElemnt('ul', {}, [
+        React.createElemtn('li', {} , '1'),
+        React.createElemtn('li', {}, '2')
+    ])
+])*/
+
+ReactDOM.render(divTitle, document.getElementById("root"));
